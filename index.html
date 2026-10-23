@@ -28,22 +28,22 @@
 
   <header class="header">
     <div class="container header__inner">
-      <a href="#inicio" class="header__logo" aria-label="NorteDigitalDev, inicio">
+      <a href="./" class="header__logo" aria-label="NorteDigitalDev, inicio">
         <img src="img/logo.svg" alt="nortedigital.dev" width="170" height="26">
       </a>
       <nav class="nav" aria-label="Principal">
-        <a href="#proyectos">Proyectos</a>
-        <a href="#servicios">Servicios</a>
-        <a href="#preguntas">Preguntas</a>
+        <a href="./" aria-current="page">Inicio</a>
+        <a href="proyectos.html">Proyectos</a>
+        <a href="servicios.html">Servicios</a>
       </nav>
-      <a class="btn btn--chico" data-wa="Hola NorteDigitalDev! Vengo de tu web y quiero hacer una consulta." href="#" target="_blank" rel="noopener">Escribime</a>
+      <a class="btn btn--chico header__cta" data-wa="Hola NorteDigitalDev! Vengo de tu web y quiero hacer una consulta." href="#" target="_blank" rel="noopener">Escribime</a>
     </div>
   </header>
 
   <main>
 
     <!-- INICIO: funciona como "link en bio" -->
-    <section class="hero" id="inicio">
+    <section class="hero" id="inicio" data-oculta-wa>
       <div class="container hero__grid">
         <div class="hero__texto">
           <h1 class="hero__titulo">Webs, catálogos y apps para negocios.</h1>
@@ -52,13 +52,13 @@
 
         <ul class="links" aria-label="Accesos rápidos">
           <li>
-            <a class="link" href="#proyectos">
+            <a class="link" href="proyectos.html">
               <span class="link__titulo">Ver proyectos</span>
               <span class="link__desc">Cartas QR, catálogos, webs y más</span>
             </a>
           </li>
           <li>
-            <a class="link" href="#servicios">
+            <a class="link" href="servicios.html">
               <span class="link__titulo">Servicios y precios</span>
               <span class="link__desc">Desde USD 150, con plazos claros</span>
             </a>
@@ -85,12 +85,13 @@
       </svg>
     </section>
 
-    <!-- PROYECTOS -->
-    <section class="seccion proyectos" id="proyectos">
+    <!-- PROYECTOS DESTACADOS -->
+    <section class="seccion proyectos">
       <div class="container">
-        <h2 class="seccion__titulo">Proyectos</h2>
-        <p class="seccion__bajada">Un proyecto real y demos que muestran lo que puedo hacer para tu negocio. Tocá cualquiera para verlo funcionando.</p>
-
+        <div class="seccion__fila">
+          <h2 class="seccion__titulo">Proyectos</h2>
+          <a class="ver-todo" href="proyectos.html">Ver los 5 proyectos</a>
+        </div>
         <div class="grilla-proyectos">
           <article class="proyecto">
             <a class="proyecto__img" href="https://la-esquina-delivery.vercel.app" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
@@ -103,7 +104,6 @@
               <a class="proyecto__link" href="https://la-esquina-delivery.vercel.app" target="_blank" rel="noopener">Ver la carta</a>
             </div>
           </article>
-
           <article class="proyecto">
             <a class="proyecto__img" href="https://veta-configurador.vercel.app" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
               <img src="img/proyectos/veta.webp" alt="" width="960" height="720" loading="lazy">
@@ -115,7 +115,6 @@
               <a class="proyecto__link" href="https://veta-configurador.vercel.app" target="_blank" rel="noopener">Probar el configurador</a>
             </div>
           </article>
-
           <article class="proyecto">
             <a class="proyecto__img" href="https://cabanas-cerro-neblina.vercel.app" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
               <img src="img/proyectos/cabanas.webp" alt="" width="960" height="720" loading="lazy">
@@ -127,156 +126,23 @@
               <a class="proyecto__link" href="https://cabanas-cerro-neblina.vercel.app" target="_blank" rel="noopener">Ver la web</a>
             </div>
           </article>
-
-          <article class="proyecto">
-            <a class="proyecto__img" href="https://estudio-contable-norte.vercel.app" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
-              <img src="img/proyectos/contable.webp" alt="" width="960" height="720" loading="lazy">
-            </a>
-            <div class="proyecto__cuerpo">
-              <span class="etiqueta">Demo</span>
-              <h3>Estudio Contable Norte</h3>
-              <p>Web para un estudio contable: servicios, planes con precio y un pedido de consulta gratis que llega por WhatsApp.</p>
-              <a class="proyecto__link" href="https://estudio-contable-norte.vercel.app" target="_blank" rel="noopener">Ver la web</a>
-            </div>
-          </article>
-
-          <article class="proyecto">
-            <a class="proyecto__img" href="https://test-nortedigital.vercel.app" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
-              <img src="img/proyectos/test.webp" alt="" width="960" height="720" loading="lazy">
-            </a>
-            <div class="proyecto__cuerpo">
-              <span class="etiqueta etiqueta--propia">Herramienta propia</span>
-              <h3>Test de WhatsApp</h3>
-              <p>Seis preguntas para dueños de negocios: calcula las horas por mes que se van en consultas repetidas y recomienda qué hacer.</p>
-              <a class="proyecto__link" href="https://test-nortedigital.vercel.app" target="_blank" rel="noopener">Hacer el test</a>
-            </div>
-          </article>
         </div>
       </div>
     </section>
 
-    <!-- SERVICIOS -->
-    <section class="seccion servicios" id="servicios">
-      <div class="container">
-        <h2 class="seccion__titulo">Servicios y precios</h2>
-        <p class="seccion__bajada">Precio único por el proyecto y mantenimiento mensual aparte. Precios en dólares; en Argentina se pagan en pesos al cambio del día.</p>
-
-        <div class="grilla-servicios">
-          <article class="servicio">
-            <h3>Carta digital con QR</h3>
-            <p class="servicio__precio"><span>desde</span> USD 150</p>
-            <p>Carta con fotos, precios y horarios, botón de WhatsApp y QR listo para imprimir.</p>
-            <p class="servicio__plazo">Lista en 5 a 7 días</p>
-            <a class="servicio__cta" data-wa="Hola! Quiero consultar por una carta digital con QR." href="#" target="_blank" rel="noopener">Consultar</a>
-          </article>
-
-          <article class="servicio">
-            <h3>Catálogo con pedidos</h3>
-            <p class="servicio__precio"><span>desde</span> USD 280</p>
-            <p>Tus productos con fotos y precio, y un carrito que te manda el pedido armado por WhatsApp.</p>
-            <p class="servicio__plazo">Listo en 10 a 14 días</p>
-            <a class="servicio__cta" data-wa="Hola! Quiero consultar por un catálogo con pedidos." href="#" target="_blank" rel="noopener">Consultar</a>
-          </article>
-
-          <article class="servicio">
-            <h3>Web profesional</h3>
-            <p class="servicio__precio"><span>desde</span> USD 350</p>
-            <p>Hasta 5 secciones: servicios, galería, preguntas frecuentes, mapa y contacto. Preparada para aparecer en Google.</p>
-            <p class="servicio__plazo">Lista en 10 a 14 días</p>
-            <a class="servicio__cta" data-wa="Hola! Quiero consultar por una web profesional." href="#" target="_blank" rel="noopener">Consultar</a>
-          </article>
-
-          <article class="servicio">
-            <h3>Rediseño y mejoras</h3>
-            <p class="servicio__precio"><span>desde</span> USD 200</p>
-            <p>Para tu web actual: diseño nuevo y las funciones que le faltan.</p>
-            <p class="servicio__plazo">Según lo que necesites</p>
-            <a class="servicio__cta" data-wa="Hola! Tengo una web y quiero consultar por un rediseño o mejoras." href="#" target="_blank" rel="noopener">Consultar</a>
-          </article>
-
-          <article class="servicio servicio--medida">
-            <h3>Proyecto a medida</h3>
-            <p class="servicio__precio servicio__precio--texto">Presupuesto cerrado</p>
-            <p>El sitio o la app que tengas en mente. Se cobra el desarrollo y la puesta en producción, con mantenimiento mensual incluido los primeros 6 meses.</p>
-            <p class="servicio__plazo">Te paso el presupuesto en 48 h</p>
-            <a class="servicio__cta" data-wa="Hola! Tengo una idea para un proyecto a medida y quiero un presupuesto." href="#" target="_blank" rel="noopener">Pedir presupuesto</a>
-          </article>
+    <!-- SERVICIOS RESUMIDOS -->
+    <section class="seccion resumen-servicios">
+      <div class="container resumen-servicios__inner">
+        <div>
+          <h2 class="seccion__titulo">Servicios desde USD 150</h2>
+          <p class="seccion__bajada">Cartas QR, catálogos con pedidos, webs profesionales, rediseños y proyectos a medida, con mantenimiento mensual desde USD 15.</p>
         </div>
-
-        <div class="mantenimiento">
-          <div>
-            <h3>Mantenimiento mensual</h3>
-            <p>Me pasás los cambios por WhatsApp y yo los actualizo: precios, fotos, horarios, textos. Tu sitio siempre online y revisado.</p>
-          </div>
-          <ul class="planes">
-            <li><strong>Básico</strong> <span>USD 15/mes</span> <em>Hasta 3 cambios por mes</em></li>
-            <li><strong>Plus</strong> <span>USD 30/mes</span> <em>Hasta 10 cambios, 1 mejora y reporte de visitas</em></li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <!-- CÓMO TRABAJO -->
-    <section class="seccion proceso" id="proceso">
-      <div class="container">
-        <h2 class="seccion__titulo">Cómo trabajo</h2>
-        <ol class="pasos">
-          <li>
-            <h3>Charlamos</h3>
-            <p>Me contás qué necesitás por WhatsApp. Te hago pocas preguntas, sin vueltas.</p>
-          </li>
-          <li>
-            <h3>Te paso la propuesta</h3>
-            <p>Qué incluye, cuánto sale y cuándo está. Arrancamos con el 50 %.</p>
-          </li>
-          <li>
-            <h3>Lo hago con tus cambios</h3>
-            <p>Ves el avance y pedís cambios antes de publicar: dos rondas incluidas.</p>
-          </li>
-          <li>
-            <h3>Lo publico y lo cuido</h3>
-            <p>Sale online con tu dominio y queda al día con el mantenimiento.</p>
-          </li>
-        </ol>
-
-        <div class="detras">
-          <img src="img/sello.svg" alt="" width="72" height="72">
-          <p>Detrás de NorteDigitalDev hay un desarrollador web de Tucumán. Trabajás directo conmigo, sin intermediarios: te respondo yo y el dominio queda siempre a tu nombre.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- PREGUNTAS -->
-    <section class="seccion preguntas" id="preguntas">
-      <div class="container preguntas__grid">
-        <h2 class="seccion__titulo">Preguntas</h2>
-        <div class="faq">
-          <details>
-            <summary>¿El dominio y el sitio son míos?</summary>
-            <p>Sí. El dominio se registra a tu nombre y lo pagás vos. Si en algún momento dejás el mantenimiento, te entrego los archivos de tu sitio.</p>
-          </details>
-          <details>
-            <summary>¿Cómo se paga?</summary>
-            <p>50 % para empezar y 50 % antes de publicar. El mantenimiento se paga por mes adelantado. En Argentina, en pesos al cambio del día; desde otros países, por transferencia internacional.</p>
-          </details>
-          <details>
-            <summary>¿Qué incluye el mantenimiento?</summary>
-            <p>Que el sitio esté siempre online y revisado, y los cambios de contenido del mes: precios, fotos, horarios o textos. El plan Básico incluye hasta 3 cambios y el Plus hasta 10, más una mejora chica y un reporte de visitas.</p>
-          </details>
-          <details>
-            <summary>¿Cuánto tarda?</summary>
-            <p>Una carta QR, entre 5 y 7 días. Un catálogo o una web, entre 10 y 14 días. El plazo corre desde que me pasás fotos, precios y textos.</p>
-          </details>
-          <details>
-            <summary>¿Trabajás con negocios de otros países?</summary>
-            <p>Sí. Todo se coordina por WhatsApp y los sitios funcionan igual en cualquier lugar.</p>
-          </details>
-        </div>
+        <a class="btn btn--borde" href="servicios.html">Ver servicios y precios</a>
       </div>
     </section>
 
     <!-- CONTACTO -->
-    <section class="contacto" id="contacto">
+    <section class="contacto" id="contacto" data-oculta-wa>
       <div class="container contacto__inner">
         <h2 class="contacto__titulo">¿Tenés un negocio y querés vender más por internet?</h2>
         <p>Contame qué hacés y te digo qué te conviene, sin compromiso.</p>

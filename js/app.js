@@ -11,24 +11,15 @@ document.querySelectorAll("[data-wa]").forEach((link) => {
   link.href = `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(link.dataset.wa)}`;
 });
 
-// El botón flotante de WhatsApp aparece cuando el inicio ya no se ve
-// y se esconde de nuevo sobre la sección de contacto (que ya tiene su botón).
+// El botón flotante de WhatsApp se esconde mientras se ve alguna zona
+// marcada con data-oculta-wa (el inicio, la cabecera de cada página y el
+// contacto, que ya tienen su propio botón).
 const flotante = document.getElementById("wa-flotante");
-const inicio = document.getElementById("inicio");
-const contacto = document.getElementById("contacto");
-let inicioVisible = true;
-let contactoVisible = false;
+const visibles = new Set();
 
-const actualizarFlotante = () => {
-  flotante.classList.toggle("visible", !inicioVisible && !contactoVisible);
-};
+const observador = new IntersectionObserver((entradas) => {
+  entradas.forEach((e) => (e.isIntersecting ? visibles.add(e.target) : visibles.delete(e.target)));
+  flotante.classList.toggle("visible", visibles.size === 0);
+});
 
-new IntersectionObserver(([e]) => {
-  inicioVisible = e.isIntersecting;
-  actualizarFlotante();
-}).observe(inicio);
-
-new IntersectionObserver(([e]) => {
-  contactoVisible = e.isIntersecting;
-  actualizarFlotante();
-}).observe(contacto);
+document.querySelectorAll("[data-oculta-wa]").forEach((el) => observador.observe(el));
