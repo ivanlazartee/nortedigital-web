@@ -1073,7 +1073,10 @@ a { color: inherit; }
 
 /* ---------- Precios en pesos (dólar blue) ---------- */
 
-.precio__ars {
+.precio__principal { font-weight: inherit; }
+
+/* El precio chico (dólares, o pesos si no hay API) debajo del grande */
+.precio__secundario {
   display: block;
   margin-top: 0.2rem;
   font-size: 0.85rem;
@@ -1084,7 +1087,7 @@ a { color: inherit; }
   font-variant-numeric: tabular-nums;
 }
 
-.precio__ars[hidden] { display: none; }
+.precio__secundario[hidden] { display: none; }
 
 .nota-dolar {
   margin-bottom: 1.25rem;

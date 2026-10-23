@@ -26,17 +26,24 @@ document.querySelectorAll("[data-oculta-wa]").forEach((el) => observador.observe
 
 // ---------- Precios en pesos con el dólar blue ----------
 // Solo en las páginas que tienen elementos con data-usd (Servicios).
-// Ejemplo con el dólar blue a $1.565 (venta):
-//   USD 150 × 1.565 = $234.750 → redondeado a miles: ≈ $235.000
+// Cuando llega el dólar, el precio en pesos pasa a ser el grande y el de
+// dólares queda chico debajo. Ejemplo con el blue a $1.565 (venta):
+//   USD 150 × 1.565 = $234.750 → redondeado a miles: $235.000
+//   grande: "$235.000"   chico: "USD 150"
 const conPrecio = document.querySelectorAll("[data-usd]");
 
 const pesos = (n) => "$" + n.toLocaleString("es-AR", { maximumFractionDigits: 0 });
 
 function mostrarPesos(venta, fecha) {
   conPrecio.forEach((el) => {
-    const ars = Math.round((Number(el.dataset.usd) * venta) / 1000) * 1000;
-    el.textContent = `≈ ${pesos(ars)}${el.dataset.sufijo || ""}`;
-    el.hidden = false;
+    const usd = Number(el.dataset.usd);
+    const sufijo = el.dataset.sufijo || "";
+    const ars = Math.round((usd * venta) / 1000) * 1000;
+    const principal = el.querySelector(".precio__principal");
+    const secundario = el.querySelector(".precio__secundario");
+    principal.textContent = `${pesos(ars)}${sufijo}`;
+    secundario.textContent = `USD ${usd}${sufijo}`;
+    secundario.hidden = false;
   });
 
   const nota = document.getElementById("nota-dolar");
