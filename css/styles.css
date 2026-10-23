@@ -113,11 +113,81 @@ a { color: inherit; }
 }
 
 .nav a {
+  position: relative;
   text-decoration: none;
   color: var(--piedra-2);
 }
 
 .nav a:hover { color: var(--piedra); }
+
+/* Página actual: texto claro y una línea musgo debajo */
+.nav a[aria-current="page"] { color: var(--piedra); font-weight: 650; }
+
+.nav a[aria-current="page"]::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -6px;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--musgo);
+}
+
+/* ---------- Cabecera de las páginas internas ---------- */
+
+.cabecera {
+  position: relative;
+  padding-top: clamp(2.25rem, 6vw, 4.5rem);
+  padding-bottom: clamp(4.5rem, 9vw, 7rem);
+  overflow: hidden;
+}
+
+.cabecera .container { position: relative; z-index: 1; }
+
+.cabecera__titulo {
+  font-size: clamp(2.4rem, 6vw, 4.2rem);
+  font-weight: 780;
+  font-stretch: 115%;
+  letter-spacing: -0.04em;
+  line-height: 1;
+}
+
+.cabecera__bajada {
+  margin-top: 1rem;
+  max-width: 52ch;
+  font-size: 1.1rem;
+  color: var(--piedra-2);
+}
+
+/* La sección que sigue a una cabecera arranca pegada al valle */
+.seccion--sin-arriba { padding-top: 1.5rem; }
+
+.cabecera + .seccion { background: var(--noche-2); }
+
+/* ---------- Inicio: título con link ---------- */
+
+.seccion__fila {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.5rem 1.5rem;
+}
+
+.ver-todo {
+  font-weight: 700;
+  color: var(--ocre-claro);
+  text-underline-offset: 4px;
+}
+
+.resumen-servicios__inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem 3rem;
+}
 
 /* ---------- Inicio ---------- */
 
@@ -626,9 +696,34 @@ a { color: inherit; }
 /* ---------- Celular ---------- */
 
 @media (max-width: 760px) {
-  .nav { display: none; }
+  :root { --header: 104px; }
 
-  .header__inner { justify-content: space-between; }
+  /* En el celular el menú pasa a una fila de pestañas debajo del logo */
+  .header__inner {
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 0 1rem;
+    height: auto;
+    padding-top: 0.6rem;
+  }
+
+  .nav {
+    order: 3;
+    width: 100%;
+    margin: 0.35rem 0 0;
+    gap: 0;
+    font-size: 0.95rem;
+  }
+
+  .nav a {
+    flex: 1;
+    padding: 0.7rem 0 0.75rem;
+    text-align: center;
+  }
+
+  .nav a[aria-current="page"]::after { bottom: 0; left: 15%; right: 15%; }
+
+  .seccion__fila { align-items: flex-start; flex-direction: column; }
 
   .hero { padding-top: 1.75rem; }
 
@@ -652,4 +747,16 @@ a { color: inherit; }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after { transition-duration: 0.01ms !important; }
+}
+
+/* ---------- Ajustes de las páginas internas ---------- */
+
+.seccion--sin-arriba .grilla-servicios,
+.seccion--sin-arriba .grilla-proyectos { margin-top: 0; }
+
+.cabecera { padding-bottom: clamp(3.75rem, 7vw, 5.5rem); }
+
+@media (max-width: 760px) {
+  .hero__titulo { font-size: 2.35rem; }
+  .cabecera__titulo { font-size: 2.35rem; }
 }
