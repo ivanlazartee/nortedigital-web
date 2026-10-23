@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NorteDigitalDev — Webs, catálogos y apps para negocios</title>
+  <meta name="description" content="Webs, cartas digitales, catálogos con pedidos por WhatsApp y apps para negocios. Desde Tucumán para cualquier lugar, con mantenimiento mensual.">
+  <meta name="theme-color" content="#0F1A17">
+
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://nortedigital.vercel.app/">
+  <meta property="og:title" content="NorteDigitalDev — Webs, catálogos y apps para negocios">
+  <meta property="og:description" content="Proyectos, servicios con precios y contacto directo por WhatsApp.">
+  <meta property="og:image" content="https://nortedigital.vercel.app/img/og.png">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,300..800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <header class="header">
+    <div class="container header__inner">
+      <a href="#inicio" class="header__logo" aria-label="NorteDigitalDev, inicio">
+        <img src="img/logo.svg" alt="nortedigital.dev" width="170" height="26">
+      </a>
+      <nav class="nav" aria-label="Principal">
+        <a href="#proyectos">Proyectos</a>
+        <a href="#servicios">Servicios</a>
+        <a href="#preguntas">Preguntas</a>
+      </nav>
+      <a class="btn btn--chico" data-wa="Hola NorteDigitalDev! Vengo de tu web y quiero hacer una consulta." href="#" target="_blank" rel="noopener">Escribime</a>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- INICIO: funciona como "link en bio" -->
+    <section class="hero" id="inicio">
+      <div class="container hero__grid">
+        <div class="hero__texto">
+          <h1 class="hero__titulo">Webs, catálogos y apps para negocios.</h1>
+          <p class="hero__bajada">Desde Tucumán, para negocios de cualquier lugar. Diseño a medida, listo en días y con mantenimiento para que siempre esté al día.</p>
+        </div>
+
+        <ul class="links" aria-label="Accesos rápidos">
+          <li>
+            <a class="link" href="#proyectos">
+              <span class="link__titulo">Ver proyectos</span>
+              <span class="link__desc">Cartas QR, catálogos, webs y más</span>
+            </a>
+          </li>
+          <li>
+            <a class="link" href="#servicios">
+              <span class="link__titulo">Servicios y precios</span>
+              <span class="link__desc">Desde USD 150, con plazos claros</span>
+            </a>
+          </li>
+          <li>
+            <a class="link" href="https://test-nortedigital.vercel.app" target="_blank" rel="noopener">
+              <span class="link__titulo">¿Cuánto tiempo perdés en WhatsApp?</span>
+              <span class="link__desc">Hacé el test gratis, 1 minuto</span>
+            </a>
+          </li>
+          <li>
+            <a class="link link--principal" data-wa="Hola NorteDigitalDev! Vengo de tu web y quiero hacer una consulta." href="#" target="_blank" rel="noopener">
+              <span class="link__titulo">Escribime por WhatsApp</span>
+              <span class="link__desc">Te respondo yo, el mismo día</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- El valle: el perfil de los cerros cierra el inicio -->
+      <svg class="valle" viewBox="0 0 1440 160" preserveAspectRatio="none" aria-hidden="true">
+        <path class="valle__fondo" d="M0 120 L180 70 L300 100 L470 40 L620 95 L760 55 L900 105 L1060 30 L1220 90 L1440 60 V160 H0 Z"/>
+        <path class="valle__frente" d="M0 140 L220 105 L380 130 L560 92 L760 128 L980 98 L1180 132 L1440 108 V160 H0 Z"/>
+      </svg>
+    </section>
+
+    <!-- PROYECTOS -->
+    <section class="seccion proyectos" id="proyectos">
+      <div class="container">
+        <h2 class="seccion__titulo">Proyectos</h2>
+        <p class="seccion__bajada">Un proyecto real y demos que muestran lo que puedo hacer para tu negocio. Tocá cualquiera para verlo funcionando.</p>
+
+        <div class="grilla-proyectos">
+          <article class="proyecto">
+            <a class="proyecto__img" href="https://la-esquina-delivery.vercel.app" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+              <img src="img/proyectos/esquina.webp" alt="" width="960" height="720" loading="lazy">
+            </a>
+            <div class="proyecto__cuerpo">
+              <span class="etiqueta etiqueta--real">Proyecto real</span>
+              <h3>La Esquina Delivery</h3>
+              <p>Carta QR para las mesas y pedidos por WhatsApp que llegan completos. El dueño cambia platos y precios desde su propio panel.</p>
+              <a class="proyecto__link" href="https://la-esquina-delivery.vercel.app" target="_blank" rel="noopener">Ver la carta</a>
+            </div>
+          </article>
+
+          <article class="proyecto">
+            <a class="proyecto__img" href="https://veta-configurador.vercel.app" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+              <img src="img/proyectos/veta.webp" alt="" width="960" height="720" loading="lazy">
+            </a>
+            <div class="proyecto__cuerpo">
+              <span class="etiqueta">Demo</span>
+              <h3>Veta, mesas a medida</h3>
+              <p>El cliente elige madera, medidas y patas, ve el plano y el precio al instante, y manda el pedido por WhatsApp.</p>
+              <a class="proyecto__link" href="https://veta-configurador.vercel.app" target="_blank" rel="noopener">Probar el configurador</a>
+            </div>
+          </article>
+
+          <article class="proyecto">
+            <a class="proyecto__img" href="https://cabanas-cerro-neblina.vercel.app" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+              <img src="img/proyectos/cabanas.webp" alt="" width="960" height="720" loading="lazy">
+            </a>
+            <div class="proyecto__cuerpo">
+              <span class="etiqueta">Demo</span>
+              <h3>Cabañas Cerro Neblina</h3>
+              <p>Web para cabañas en Tafí del Valle, en español e inglés, con las cabañas, el lugar y la consulta de disponibilidad.</p>
+              <a class="proyecto__link" href="https://cabanas-cerro-neblina.vercel.app" target="_blank" rel="noopener">Ver la web</a>
+            </div>
+          </article>
+
+          <article class="proyecto">
+            <a class="proyecto__img" href="https://estudio-contable-norte.vercel.app" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+              <img src="img/proyectos/contable.webp" alt="" width="960" height="720" loading="lazy">
+            </a>
+            <div class="proyecto__cuerpo">
+              <span class="etiqueta">Demo</span>
+              <h3>Estudio Contable Norte</h3>
+              <p>Web para un estudio contable: servicios, planes con precio y un pedido de consulta gratis que llega por WhatsApp.</p>
+              <a class="proyecto__link" href="https://estudio-contable-norte.vercel.app" target="_blank" rel="noopener">Ver la web</a>
+            </div>
+          </article>
+
+          <article class="proyecto">
+            <a class="proyecto__img" href="https://test-nortedigital.vercel.app" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+              <img src="img/proyectos/test.webp" alt="" width="960" height="720" loading="lazy">
+            </a>
+            <div class="proyecto__cuerpo">
+              <span class="etiqueta etiqueta--propia">Herramienta propia</span>
+              <h3>Test de WhatsApp</h3>
+              <p>Seis preguntas para dueños de negocios: calcula las horas por mes que se van en consultas repetidas y recomienda qué hacer.</p>
+              <a class="proyecto__link" href="https://test-nortedigital.vercel.app" target="_blank" rel="noopener">Hacer el test</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICIOS -->
+    <section class="seccion servicios" id="servicios">
+      <div class="container">
+        <h2 class="seccion__titulo">Servicios y precios</h2>
+        <p class="seccion__bajada">Precio único por el proyecto y mantenimiento mensual aparte. Precios en dólares; en Argentina se pagan en pesos al cambio del día.</p>
+
+        <div class="grilla-servicios">
+          <article class="servicio">
+            <h3>Carta digital con QR</h3>
+            <p class="servicio__precio"><span>desde</span> USD 150</p>
+            <p>Carta con fotos, precios y horarios, botón de WhatsApp y QR listo para imprimir.</p>
+            <p class="servicio__plazo">Lista en 5 a 7 días</p>
+            <a class="servicio__cta" data-wa="Hola! Quiero consultar por una carta digital con QR." href="#" target="_blank" rel="noopener">Consultar</a>
+          </article>
+
+          <article class="servicio">
+            <h3>Catálogo con pedidos</h3>
+            <p class="servicio__precio"><span>desde</span> USD 280</p>
+            <p>Tus productos con fotos y precio, y un carrito que te manda el pedido armado por WhatsApp.</p>
+            <p class="servicio__plazo">Listo en 10 a 14 días</p>
+            <a class="servicio__cta" data-wa="Hola! Quiero consultar por un catálogo con pedidos." href="#" target="_blank" rel="noopener">Consultar</a>
+          </article>
+
+          <article class="servicio">
+            <h3>Web profesional</h3>
+            <p class="servicio__precio"><span>desde</span> USD 350</p>
+            <p>Hasta 5 secciones: servicios, galería, preguntas frecuentes, mapa y contacto. Preparada para aparecer en Google.</p>
+            <p class="servicio__plazo">Lista en 10 a 14 días</p>
+            <a class="servicio__cta" data-wa="Hola! Quiero consultar por una web profesional." href="#" target="_blank" rel="noopener">Consultar</a>
+          </article>
+
+          <article class="servicio">
+            <h3>Rediseño y mejoras</h3>
+            <p class="servicio__precio"><span>desde</span> USD 200</p>
+            <p>Para tu web actual: diseño nuevo y las funciones que le faltan.</p>
+            <p class="servicio__plazo">Según lo que necesites</p>
+            <a class="servicio__cta" data-wa="Hola! Tengo una web y quiero consultar por un rediseño o mejoras." href="#" target="_blank" rel="noopener">Consultar</a>
+          </article>
+
+          <article class="servicio servicio--medida">
+            <h3>Proyecto a medida</h3>
+            <p class="servicio__precio servicio__precio--texto">Presupuesto cerrado</p>
+            <p>El sitio o la app que tengas en mente. Se cobra el desarrollo y la puesta en producción, con mantenimiento mensual incluido los primeros 6 meses.</p>
+            <p class="servicio__plazo">Te paso el presupuesto en 48 h</p>
+            <a class="servicio__cta" data-wa="Hola! Tengo una idea para un proyecto a medida y quiero un presupuesto." href="#" target="_blank" rel="noopener">Pedir presupuesto</a>
+          </article>
+        </div>
+
+        <div class="mantenimiento">
+          <div>
+            <h3>Mantenimiento mensual</h3>
+            <p>Me pasás los cambios por WhatsApp y yo los actualizo: precios, fotos, horarios, textos. Tu sitio siempre online y revisado.</p>
+          </div>
+          <ul class="planes">
+            <li><strong>Básico</strong> <span>USD 15/mes</span> <em>Hasta 3 cambios por mes</em></li>
+            <li><strong>Plus</strong> <span>USD 30/mes</span> <em>Hasta 10 cambios, 1 mejora y reporte de visitas</em></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- CÓMO TRABAJO -->
+    <section class="seccion proceso" id="proceso">
+      <div class="container">
+        <h2 class="seccion__titulo">Cómo trabajo</h2>
+        <ol class="pasos">
+          <li>
+            <h3>Charlamos</h3>
+            <p>Me contás qué necesitás por WhatsApp. Te hago pocas preguntas, sin vueltas.</p>
+          </li>
+          <li>
+            <h3>Te paso la propuesta</h3>
+            <p>Qué incluye, cuánto sale y cuándo está. Arrancamos con el 50 %.</p>
+          </li>
+          <li>
+            <h3>Lo hago con tus cambios</h3>
+            <p>Ves el avance y pedís cambios antes de publicar: dos rondas incluidas.</p>
+          </li>
+          <li>
+            <h3>Lo publico y lo cuido</h3>
+            <p>Sale online con tu dominio y queda al día con el mantenimiento.</p>
+          </li>
+        </ol>
+
+        <div class="detras">
+          <img src="img/sello.svg" alt="" width="72" height="72">
+          <p>Detrás de NorteDigitalDev hay un desarrollador web de Tucumán. Trabajás directo conmigo, sin intermediarios: te respondo yo y el dominio queda siempre a tu nombre.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- PREGUNTAS -->
+    <section class="seccion preguntas" id="preguntas">
+      <div class="container preguntas__grid">
+        <h2 class="seccion__titulo">Preguntas</h2>
+        <div class="faq">
+          <details>
+            <summary>¿El dominio y el sitio son míos?</summary>
+            <p>Sí. El dominio se registra a tu nombre y lo pagás vos. Si en algún momento dejás el mantenimiento, te entrego los archivos de tu sitio.</p>
+          </details>
+          <details>
+            <summary>¿Cómo se paga?</summary>
+            <p>50 % para empezar y 50 % antes de publicar. El mantenimiento se paga por mes adelantado. En Argentina, en pesos al cambio del día; desde otros países, por transferencia internacional.</p>
+          </details>
+          <details>
+            <summary>¿Qué incluye el mantenimiento?</summary>
+            <p>Que el sitio esté siempre online y revisado, y los cambios de contenido del mes: precios, fotos, horarios o textos. El plan Básico incluye hasta 3 cambios y el Plus hasta 10, más una mejora chica y un reporte de visitas.</p>
+          </details>
+          <details>
+            <summary>¿Cuánto tarda?</summary>
+            <p>Una carta QR, entre 5 y 7 días. Un catálogo o una web, entre 10 y 14 días. El plazo corre desde que me pasás fotos, precios y textos.</p>
+          </details>
+          <details>
+            <summary>¿Trabajás con negocios de otros países?</summary>
+            <p>Sí. Todo se coordina por WhatsApp y los sitios funcionan igual en cualquier lugar.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACTO -->
+    <section class="contacto" id="contacto">
+      <div class="container contacto__inner">
+        <h2 class="contacto__titulo">¿Tenés un negocio y querés vender más por internet?</h2>
+        <p>Contame qué hacés y te digo qué te conviene, sin compromiso.</p>
+        <div class="contacto__botones">
+          <a class="btn btn--principal" data-wa="Hola NorteDigitalDev! Vengo de tu web y quiero hacer una consulta." href="#" target="_blank" rel="noopener">Escribime por WhatsApp</a>
+          <a class="btn btn--borde" href="https://instagram.com/nortedigital.dev" target="_blank" rel="noopener">Instagram</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <img src="img/logo.svg" alt="nortedigital.dev" width="140" height="21">
+      <p>Webs, catálogos, apps y mantenimiento para negocios. <a href="https://instagram.com/nortedigital.dev" target="_blank" rel="noopener">@nortedigital.dev</a></p>
+    </div>
+  </footer>
+
+  <a class="wa-flotante" id="wa-flotante" data-wa="Hola NorteDigitalDev! Vengo de tu web y quiero hacer una consulta." href="#" target="_blank" rel="noopener" aria-label="Escribime por WhatsApp">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2c-1.5 0-3-.4-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.4.1-.6.3-.2.2-.8.8-.8 2s.8 2.3 1 2.5c.1.2 1.7 2.6 4.1 3.6 1.5.7 2.1.7 2.9.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3Z"/></svg>
+  </a>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
