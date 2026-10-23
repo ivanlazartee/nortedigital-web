@@ -1070,3 +1070,27 @@ a { color: inherit; }
   .galeria { grid-template-columns: 1fr; }
   .siguiente { flex-direction: column-reverse; }
 }
+
+/* ---------- Precios en pesos (dólar blue) ---------- */
+
+.precio__ars {
+  display: block;
+  margin-top: 0.2rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+  font-stretch: 100%;
+  letter-spacing: 0;
+  color: var(--alpino);
+  font-variant-numeric: tabular-nums;
+}
+
+.precio__ars[hidden] { display: none; }
+
+.nota-dolar {
+  margin-bottom: 1.25rem;
+  font-size: 0.88rem;
+  color: var(--texto-2);
+}
+
+/* En la página de cada proyecto, los botones van debajo de la captura */
+.marco--grande + .caso-detalle__links { margin-top: 1.25rem; }

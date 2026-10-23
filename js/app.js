@@ -23,3 +23,40 @@ const observador = new IntersectionObserver((entradas) => {
 });
 
 document.querySelectorAll("[data-oculta-wa]").forEach((el) => observador.observe(el));
+
+// ---------- Precios en pesos con el dólar blue ----------
+// Solo en las páginas que tienen elementos con data-usd (Servicios).
+// Ejemplo con el dólar blue a $1.565 (venta):
+//   USD 150 × 1.565 = $234.750 → redondeado a miles: ≈ $235.000
+const conPrecio = document.querySelectorAll("[data-usd]");
+
+const pesos = (n) => "$" + n.toLocaleString("es-AR", { maximumFractionDigits: 0 });
+
+function mostrarPesos(venta, fecha) {
+  conPrecio.forEach((el) => {
+    const ars = Math.round((Number(el.dataset.usd) * venta) / 1000) * 1000;
+    el.textContent = `≈ ${pesos(ars)}${el.dataset.sufijo || ""}`;
+    el.hidden = false;
+  });
+
+  const nota = document.getElementById("nota-dolar");
+  if (nota) {
+    const hora = fecha.toLocaleString("es-AR", { day: "numeric", month: "numeric", hour: "2-digit", minute: "2-digit", hour12: false });
+    nota.textContent = `Precios en pesos calculados con el dólar blue (venta ${pesos(venta)}, actualizado el ${hora}). Son aproximados y se confirman al pagar.`;
+    nota.hidden = false;
+  }
+}
+
+async function cargarDolar() {
+  if (!conPrecio.length) return;
+  try {
+    const resp = await fetch("https://dolarapi.com/v1/dolares/blue", { signal: AbortSignal.timeout(6000) });
+    if (!resp.ok) return;
+    const datos = await resp.json();
+    if (datos.venta > 0) mostrarPesos(datos.venta, new Date(datos.fechaActualizacion));
+  } catch (e) {
+    // Si la API no responde, la página queda solo con los precios en dólares
+  }
+}
+
+cargarDolar();
