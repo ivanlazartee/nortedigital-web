@@ -8,12 +8,12 @@
   --bosque: #10231D;     /* fondo principal */
   --marfil: #E8E3D7;     /* títulos y textos destacados */
   --alpino: #91A681;     /* gráficos y detalles */
-  --ocre: #D0A03D;       /* botones principales */
+  --ocre: #6E9CB0;       /* botones principales */
   --petroleo: #24483C;   /* tarjetas, superficies y bordes */
 
   --superficie: #152D25; /* entre bosque y petróleo */
   --texto-2: #ABADA3;    /* marfil apagado para textos secundarios */
-  --ocre-claro: #DDB25A;
+  --ocre-claro: #8DB4C5;
 
   --font: "Archivo", system-ui, -apple-system, "Segoe UI", sans-serif;
   --radio: 12px;
@@ -196,7 +196,7 @@ a { color: inherit; }
 
 .paisaje .arista { fill: none; stroke: var(--alpino); stroke-width: 1; opacity: 0.7; }
 
-.paisaje .sol { fill: var(--ocre); }
+.paisaje .sol { fill: #D0A03D; } /* mismo amarillo que el sol del logo */
 
 .paisaje .horizonte { stroke: var(--petroleo); stroke-width: 1; }
 
@@ -282,7 +282,7 @@ a { color: inherit; }
 
 /* WhatsApp: la acción principal, en ocre */
 .acceso--principal { background: var(--ocre); color: var(--bosque); }
-.acceso--principal .acceso__desc { color: #3E3420; }
+.acceso--principal .acceso__desc { color: #1F3A44; }
 .acceso--principal .acceso__flecha { border-color: rgba(16, 35, 29, 0.35); color: var(--bosque); }
 .acceso--principal:hover { background: var(--ocre-claro); }
 .acceso--principal:hover .acceso__flecha { border-color: var(--bosque); }
