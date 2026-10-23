@@ -24,32 +24,31 @@ const observador = new IntersectionObserver((entradas) => {
 
 document.querySelectorAll("[data-oculta-wa]").forEach((el) => observador.observe(el));
 
-// ---------- Precios en pesos con el dólar blue ----------
-// Solo en las páginas que tienen elementos con data-usd (Servicios).
-// Cuando llega el dólar, el precio en pesos pasa a ser el grande y el de
-// dólares queda chico debajo. Ejemplo con el blue a $1.565 (venta):
-//   USD 150 × 1.565 = $234.750 → redondeado a miles: $235.000
-//   grande: "$235.000"   chico: "USD 150"
-const conPrecio = document.querySelectorAll("[data-usd]");
+// ---------- Precios en pesos, con referencia en dólares ----------
+// Solo en las páginas que tienen elementos con data-ars (Servicios).
+// El precio en pesos es fijo y va grande. Si responde la API del dólar blue,
+// debajo se muestra el valor aproximado en dólares, redondeado de a 5.
+// Ejemplo con el blue a $1.565 (venta):
+//   $250.000 ÷ 1.565 = 159,7 → redondeado de a 5: USD 160
+//   grande: "$250.000"   chico: "≈ USD 160"
+const conPrecio = document.querySelectorAll("[data-ars]");
 
 const pesos = (n) => "$" + n.toLocaleString("es-AR", { maximumFractionDigits: 0 });
 
-function mostrarPesos(venta, fecha) {
+function mostrarDolares(venta, fecha) {
   conPrecio.forEach((el) => {
-    const usd = Number(el.dataset.usd);
+    const ars = Number(el.dataset.ars);
     const sufijo = el.dataset.sufijo || "";
-    const ars = Math.round((usd * venta) / 1000) * 1000;
-    const principal = el.querySelector(".precio__principal");
+    const usd = Math.max(5, Math.round(ars / venta / 5) * 5);
     const secundario = el.querySelector(".precio__secundario");
-    principal.textContent = `${pesos(ars)}${sufijo}`;
-    secundario.textContent = `USD ${usd}${sufijo}`;
+    secundario.textContent = `≈ USD ${usd}${sufijo}`;
     secundario.hidden = false;
   });
 
   const nota = document.getElementById("nota-dolar");
   if (nota) {
     const hora = fecha.toLocaleString("es-AR", { day: "numeric", month: "numeric", hour: "2-digit", minute: "2-digit", hour12: false });
-    nota.textContent = `Precios en pesos calculados con el dólar blue (venta ${pesos(venta)}, actualizado el ${hora}). Son aproximados y se confirman al pagar.`;
+    nota.textContent = `Valores en dólares aproximados, con el dólar blue (venta ${pesos(venta)}, actualizado el ${hora}).`;
     nota.hidden = false;
   }
 }
@@ -60,9 +59,9 @@ async function cargarDolar() {
     const resp = await fetch("https://dolarapi.com/v1/dolares/blue", { signal: AbortSignal.timeout(6000) });
     if (!resp.ok) return;
     const datos = await resp.json();
-    if (datos.venta > 0) mostrarPesos(datos.venta, new Date(datos.fechaActualizacion));
+    if (datos.venta > 0) mostrarDolares(datos.venta, new Date(datos.fechaActualizacion));
   } catch (e) {
-    // Si la API no responde, la página queda solo con los precios en dólares
+    // Si la API no responde, la página queda solo con los precios en pesos
   }
 }
 
