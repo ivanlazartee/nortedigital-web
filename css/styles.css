@@ -896,3 +896,177 @@ a { color: inherit; }
   html { scroll-behavior: auto; }
   *, *::before, *::after { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; }
 }
+
+/* ---------- Nombres de proyectos como botón ---------- */
+
+.caso__nombre {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  color: var(--marfil);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.caso__nombre svg {
+  flex: none;
+  width: 30px;
+  height: 30px;
+  padding: 8px;
+  border: 1px solid var(--petroleo);
+  border-radius: 50%;
+  fill: none;
+  stroke: var(--alpino);
+  stroke-width: 1.8;
+  transition: transform 0.2s, border-color 0.2s;
+}
+
+.caso__nombre:hover { color: var(--ocre-claro); }
+.caso__nombre:hover svg { transform: translateX(3px); border-color: var(--alpino); }
+
+/* ---------- Página de cada proyecto ---------- */
+
+.cabecera--caso .container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.75rem;
+}
+
+.cabecera--caso .cabecera__bajada { margin-top: 0; }
+
+.volver {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  margin-bottom: 0.5rem;
+  font-size: 0.92rem;
+  color: var(--texto-2);
+  text-decoration: none;
+}
+
+.volver svg,
+.siguiente svg { width: 14px; height: 14px; fill: none; stroke: currentColor; stroke-width: 1.8; flex: none; }
+
+.volver:hover { color: var(--marfil); }
+
+.caso-detalle__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-top: 0.75rem;
+}
+
+.marco--grande img { aspect-ratio: 16 / 9; }
+
+.caso-detalle {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+  gap: 2rem 4rem;
+  margin-top: clamp(2.25rem, 6vw, 3.5rem);
+}
+
+.caso-detalle__texto h2 {
+  font-size: 1.35rem;
+  font-weight: 740;
+  font-stretch: 110%;
+  letter-spacing: -0.02em;
+}
+
+.caso-detalle__texto h2 + p,
+.caso-detalle__texto p + p { margin-top: 0.75rem; }
+
+.caso-detalle__texto p { color: var(--texto-2); max-width: 62ch; }
+
+.caso-detalle__texto h2:not(:first-child) { margin-top: 2.25rem; }
+
+.lista-check {
+  list-style: none;
+  margin: 1rem 0 0;
+  padding: 0;
+  display: grid;
+  gap: 0.6rem;
+}
+
+.lista-check li {
+  position: relative;
+  padding-left: 1.6rem;
+  color: var(--texto-2);
+}
+
+.lista-check li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.45em;
+  width: 10px;
+  height: 6px;
+  border-left: 2px solid var(--alpino);
+  border-bottom: 2px solid var(--alpino);
+  transform: rotate(-45deg);
+}
+
+/* Ficha técnica al costado */
+.ficha {
+  margin: 0;
+  align-self: start;
+  border-top: 1px solid var(--petroleo);
+}
+
+.ficha div {
+  padding: 0.85rem 0;
+  border-bottom: 1px solid var(--petroleo);
+}
+
+.ficha dt { font-size: 0.8rem; color: var(--texto-2); }
+
+.ficha dd { margin: 0.15rem 0 0; font-weight: 600; }
+
+/* Galería (lista para cuando haya fotos) */
+.galeria {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: clamp(2.25rem, 6vw, 3.5rem);
+}
+
+.galeria img {
+  width: 100%;
+  border: 1px solid var(--petroleo);
+  border-radius: 12px;
+}
+
+/* Navegación entre proyectos */
+.siguiente {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: clamp(2.5rem, 6vw, 4rem);
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--petroleo);
+}
+
+.siguiente a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--texto-2);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.siguiente a:last-child { color: var(--marfil); }
+
+.siguiente a span { font-weight: 400; color: var(--texto-2); }
+
+.siguiente a:hover { color: var(--ocre-claro); }
+
+@media (max-width: 760px) {
+  .caso-detalle { grid-template-columns: 1fr; }
+  .ficha { order: -1; }
+  .marco--grande img { aspect-ratio: 4 / 3; }
+  .caso-detalle__links .btn { flex: 1 1 100%; }
+  .galeria { grid-template-columns: 1fr; }
+  .siguiente { flex-direction: column-reverse; }
+}
